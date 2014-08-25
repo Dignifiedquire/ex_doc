@@ -1,0 +1,7 @@
+#content {
+  @include span-columns(6);
+
+  color: $dark_gray;
+  font-size: 18px;
+  font-family: 'Source Serif Pro', serif;
+}

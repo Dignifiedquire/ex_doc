@@ -1,0 +1,28 @@
+
+#header {
+  width: 100%;
+  padding: 20px;
+  height: 70px;
+  background: $mid_gray;
+  margin-bottom: 50px;
+
+  .title {
+
+    margin-left: 50px;
+
+    h1 {
+      padding-bottom: 4px;
+
+      a {
+        color: $white;
+        text-decoration: none;
+        font-size: 20px;
+      }
+    }
+    h2 {
+      color: $light_gray;
+      font-weight: 300;
+      font-size: 14px;
+    }
+  }
+}
