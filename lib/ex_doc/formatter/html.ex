@@ -13,7 +13,6 @@ defmodule ExDoc.Formatter.HTML do
     output = Path.expand(config.output)
     :ok = File.mkdir_p output
 
-    generate_index(output, config)
     generate_assets(output, config)
     has_readme = config.readme && generate_readme(output, config)
 
@@ -22,16 +21,18 @@ defmodule ExDoc.Formatter.HTML do
     exceptions = filter_list(:exceptions, all)
     protocols  = filter_list(:protocols, all)
 
+    generate_index(modules, all, exceptions, protocols, output, config, has_readme)
     generate_overview(modules, exceptions, protocols, output, config)
-    generate_list(:modules, modules, all, output, config, has_readme)
-    generate_list(:exceptions, exceptions, all, output, config, has_readme)
-    generate_list(:protocols, protocols, all, output, config, has_readme)
 
     Path.join(config.output, "index.html")
   end
 
-  defp generate_index(output, config) do
-    content = Templates.index_template(config)
+  defp generate_index(modules, all, exceptions, protocols, output, config, has_readme) do
+    modules_list = generate_list(:modules, modules, all, output, config, has_readme)
+    exceptions_list = generate_list(:exceptions, exceptions, all, output, config, has_readme)
+    protocols_list = generate_list(:protocols, protocols, all, output, config, has_readme)
+
+    content = Templates.index_template(config, modules_list, exceptions_list, protocols_list, has_readme)
     :ok = File.write("#{output}/index.html", content)
   end
 
@@ -99,8 +100,7 @@ defmodule ExDoc.Formatter.HTML do
 
   defp generate_list(scope, nodes, all, output, config, has_readme) do
     Enum.each nodes, &generate_module_page(&1, all, output, config)
-    content = Templates.list_page(scope, nodes, config, has_readme)
-    File.write("#{output}/#{scope}_list.html", content)
+    Templates.list_page(scope, nodes, config, has_readme)
   end
 
   defp generate_module_page(node, modules, output, config) do

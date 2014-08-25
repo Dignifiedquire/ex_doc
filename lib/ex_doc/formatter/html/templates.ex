@@ -96,7 +96,7 @@ defmodule ExDoc.Formatter.HTML.Templates do
   end
 
   templates = [
-    index_template: [:config],
+    index_template: [:config, :modules, :exceptions, :protocols, :has_readme],
     list_template: [:scope, :nodes, :config, :has_readme],
     overview_template: [:config, :modules, :exceptions, :protocols],
     module_template: [:config, :module, :types, :functions, :macros, :callbacks, :all],

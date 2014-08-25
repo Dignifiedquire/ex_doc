@@ -75,6 +75,20 @@ to your `config/config.exs` file.
 
 To see all options available when generating docs, just run `mix help docs`.
 
+# Development
+
+If you want to update the css, you need to have ruby installed and run
+
+```bash
+gem install sass
+```
+
+Then to compile the new css run
+
+```bash
+sass lib/ex_doc/formatter/html/templates/scss/style.scss lib/ex_doc/formatter/html/templates/css/style.css
+```
+
 # License
 
 ExDoc source code is released under Apache 2 License with snippets under MIT-LICENSE.

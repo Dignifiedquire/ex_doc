@@ -1,12 +1,38 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<title><%= config.project %> v<%= config.version %> Documentation</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title><%= config.project %> v<%= config.version %> Documentation</title>
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
 </head>
-<frameset cols="20%,*">
-  <frame name="list" src="modules_list.html" />
-  <frame name="main" src="<%= config.main %>.html" />
-</frameset>
+<body>
+  <div id="header">
+    <h1>
+      <%= if url = config.homepage_url || config.source_url do %>
+      <a href="<%= url %>" target="_top"><%= config.project %></a>
+      <% else %>
+      <%= config.project %>
+      <% end %>
+    </h1>
+    <h2>v<%= config.version %></h2>
+  </div>
+
+  <div class="container">
+    <div id="navigation">
+      <div class="nav">
+        <span><a target="_self" href="modules_list.html">Modules</a></span>
+        <span><a target="_self" href="exceptions_list.html">Exceptions</a></span>
+        <span><a target="_self" href="protocols_list.html">Protocols</a></span>
+      </div>
+      <div id="search">Search: <input type="text" /></div>
+      <%= modules %>
+      <%= protocols %>
+      <%= exceptions %>
+    </div>
+
+    <div id="content">
+      hello world
+    </div>
+  </div>
+</body>
 </html>

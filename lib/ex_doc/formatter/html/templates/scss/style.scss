@@ -1,0 +1,27 @@
+// Styles for ex_doc
+
+@import 'reset';
+@import 'bourbon/bourbon';
+@import 'neat/neat';
+
+div.container {
+  @include outer-container;
+}
+
+#header {
+  width: 100%;
+  margin: 0;
+  padding: 20px;
+  height: 70px;
+  background: #4C5264;
+}
+
+#navigation {
+  @include span-columns(3);
+  background: #ccc;
+}
+
+#content {
+  @include span-columns(6);
+  background: red;
+}
