@@ -1,8 +1,20 @@
 // Styles for ex_doc
 
-@import 'reset';
-@import 'bourbon/bourbon';
-@import 'neat/neat';
+@import 'vendor/reset';
+@import 'vendor/bourbon/bourbon';
+@import 'vendor/neat/neat';
+
+@import 'variables';
+
+$google_fonts: 'http://fonts.googleapis.com/css?family=';
+
+@import url($google_fonts + 'Source+Serif+Pro:400,600,700|Source+Sans+Pro:300,400,700|Source+Code+Pro:300,400,700');
+
+body {
+  color: $white;
+  background: $white;
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+}
 
 div.container {
   @include outer-container;
@@ -10,18 +22,60 @@ div.container {
 
 #header {
   width: 100%;
-  margin: 0;
   padding: 20px;
   height: 70px;
-  background: #4C5264;
+  background: $mid_gray;
+  margin-bottom: 50px;
+
+  .title {
+
+    margin-left: 50px;
+
+    h1 {
+      padding-bottom: 4px;
+
+      a {
+        color: $white;
+        text-decoration: none;
+        font-size: 20px;
+      }
+    }
+    h2 {
+      color: $light_gray;
+      font-weight: 300;
+      font-size: 14px;
+    }
+  }
 }
 
 #navigation {
   @include span-columns(3);
-  background: #ccc;
+
+  a {
+    text-decoration: none;
+    color: $dark_gray;
+    font-weight: 300;
+  }
+
+  #modules-list {
+    li > span.title a {
+      color: $light_green;
+      font-weight: 600;
+    }
+
+    ul.method-names {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      margin-left: 10px;
+    }
+  }
+
 }
 
 #content {
   @include span-columns(6);
-  background: red;
+
+  color: $dark_gray;
+  font-size: 18px;
+  font-family: 'Source Serif Pro', serif;
 }

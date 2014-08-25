@@ -1,3 +1,4 @@
+@import url("http://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600,700|Source+Sans+Pro:300,400,700|Source+Code+Pro:300,400,700");
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
@@ -35,6 +36,11 @@ table {
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
+body {
+  color: #FFFFFF;
+  background: #FFFFFF;
+  font-family: 'Source Sans Pro', Arial, sans-serif; }
+
 div.container {
   max-width: 68em;
   margin-left: auto;
@@ -46,26 +52,50 @@ div.container {
 
 #header {
   width: 100%;
-  margin: 0;
   padding: 20px;
   height: 70px;
-  background: #4C5264; }
+  background: #4C5264;
+  margin-bottom: 50px; }
+  #header .title {
+    margin-left: 50px; }
+    #header .title h1 {
+      padding-bottom: 4px; }
+      #header .title h1 a {
+        color: #FFFFFF;
+        text-decoration: none;
+        font-size: 20px; }
+    #header .title h2 {
+      color: #959CAD;
+      font-weight: 300;
+      font-size: 14px; }
 
 #navigation {
   float: left;
   display: block;
   margin-right: 2.35765%;
-  width: 23.23176%;
-  background: #ccc; }
+  width: 23.23176%; }
   #navigation:last-child {
     margin-right: 0; }
+  #navigation a {
+    text-decoration: none;
+    color: #3C4151;
+    font-weight: 300; }
+  #navigation #modules-list li > span.title a {
+    color: #7CCFAF;
+    font-weight: 600; }
+  #navigation #modules-list ul.method-names {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px; }
 
 #content {
   float: left;
   display: block;
   margin-right: 2.35765%;
   width: 48.82117%;
-  background: red; }
+  color: #3C4151;
+  font-size: 18px;
+  font-family: 'Source Serif Pro', serif; }
   #content:last-child {
     margin-right: 0; }
 

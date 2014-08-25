@@ -7,14 +7,17 @@
 </head>
 <body>
   <div id="header">
-    <h1>
-      <%= if url = config.homepage_url || config.source_url do %>
-      <a href="<%= url %>" target="_top"><%= config.project %></a>
-      <% else %>
-      <%= config.project %>
-      <% end %>
-    </h1>
-    <h2>v<%= config.version %></h2>
+    <div class="logo"></div>
+    <div class="title">
+      <h1>
+        <%= if url = config.homepage_url || config.source_url do %>
+        <a href="<%= url %>" target="_top"><%= config.project %></a>
+        <% else %>
+        <%= config.project %>
+        <% end %>
+      </h1>
+      <h2>v<%= config.version %></h2>
+    </div>
   </div>
 
   <div class="container">
