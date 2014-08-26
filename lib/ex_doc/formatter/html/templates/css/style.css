@@ -43,8 +43,7 @@ body {
   body a, body a:visited {
     color: #3C4151; }
   body a {
-    text-decoration: none;
-    border-bottom: 1px solid #C4C6CA; }
+    text-decoration: none; }
 
 div.container {
   max-width: 68em;
@@ -141,6 +140,8 @@ div.container {
   line-height: 28px; }
   #content:last-child {
     margin-right: 0; }
+  #content a {
+    border-bottom: 1px solid #C4C6CA; }
   #content ol {
     list-style: decimal;
     margin-left: 25px; }

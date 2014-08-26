@@ -6,6 +6,9 @@
   font-family: 'Source Serif Pro', serif;
   line-height: 28px;
 
+  a {
+    border-bottom: 1px solid #C4C6CA;
+  }
 
   ol {
     list-style: decimal;
@@ -62,7 +65,6 @@
         margin-bottom: 10px;
         margin-top: 15px;
       }
-
       div.detail_header {
         @include span-columns(9 of 9);
         background: #eee;
