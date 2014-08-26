@@ -4,4 +4,37 @@
   color: $dark_gray;
   font-size: 18px;
   font-family: 'Source Serif Pro', serif;
+  line-height: 28px;
+
+  h1 {
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'Source Sans Pro', serif;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #C1C6D1;
+    margin-bottom: 20px;
+  }
+
+  a, a:visited {
+    color: $dark_gray;
+  }
+  a {
+    text-decoration: none;
+    border-bottom: 1px solid #C4C6CA;
+  }
+
+  h2 {
+    color: $light_green;
+    font-family: 'Source Sans Pro', sans-serif;
+    padding-bottom: 20px;
+    font-weight: normal;
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+
+
+  div.section {
+    margin-bottom: 20px;
+  }
+
 }

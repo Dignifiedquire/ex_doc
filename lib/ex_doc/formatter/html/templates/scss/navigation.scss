@@ -7,17 +7,37 @@
     font-weight: 300;
   }
 
-  #modules-list {
-    li > span.title a {
-      color: $light_green;
-      font-weight: 600;
-    }
+  ul.section {
+    margin-top:10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
 
-    ul.method-names {
-      margin-top: 10px;
-      margin-bottom: 10px;
-      margin-left: 10px;
+    & > li {
+      padding-bottom: 10px;
+    }
+    li {
+      padding-bottom: 5px;
+
+      & > span.title a {
+        color: $light_green;
+        font-weight: 600;
+      }
+      &:last-child {
+        padding-bottom: 0px;
+      }
+
+      ul.subsection {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 10px;
+      }
+
+      ul.functions {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding-left: 10px;
+        border-left: 2px solid #B3B8C4;
+      }
     }
   }
-
 }

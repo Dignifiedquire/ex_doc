@@ -2,13 +2,22 @@
   <span class="title">
     <a href="<%= node.id %>.html" title="<%= node.id %>"><%= node.id %></a>
   </span>
-</li>
-<ul class="method-names">
-  <%= for doc <- node.docs do  %>
+  <ul class="subsection">
     <li>
-      <span class="object_link">
-        <a href="<%= node.id %>.html#<%=h doc.id %>"><%=h doc.id %></a>
-      </span>
+      <a href="<%= node.id %>.html#introduction">Introduction</a>
     </li>
-  <% end %>
-</ul>
+    <li>
+      <a href="<%= node.id %>.html#types">Types</a>
+    </li>
+    <li>
+      <a href="<%= node.id %>.html#functions">Functions</a>
+      <ul class="functions">
+        <%= for doc <- node.docs do  %>
+          <li>
+            <a href="<%= node.id %>.html#<%=h doc.id %>"><%=h doc.id %></a>
+          </li>
+        <% end %>
+      </ul>
+    </li>
+  </ul>
+</li>

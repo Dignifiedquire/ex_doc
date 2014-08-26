@@ -1,4 +1,3 @@
-
-<ul id="<%= scope %>-list" class="class">
+<ul id="<%= scope %>-list" class="section">
   <%= for node <- nodes, do: list_item_template(node) %>
 </ul>

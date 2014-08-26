@@ -80,13 +80,28 @@ div.container {
     text-decoration: none;
     color: #3C4151;
     font-weight: 300; }
-  #navigation #modules-list li > span.title a {
-    color: #7CCFAF;
-    font-weight: 600; }
-  #navigation #modules-list ul.method-names {
+  #navigation ul.section {
     margin-top: 10px;
     margin-bottom: 10px;
     margin-left: 10px; }
+    #navigation ul.section > li {
+      padding-bottom: 10px; }
+    #navigation ul.section li {
+      padding-bottom: 5px; }
+      #navigation ul.section li > span.title a {
+        color: #7CCFAF;
+        font-weight: 600; }
+      #navigation ul.section li:last-child {
+        padding-bottom: 0px; }
+      #navigation ul.section li ul.subsection {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 10px; }
+      #navigation ul.section li ul.functions {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding-left: 10px;
+        border-left: 2px solid #B3B8C4; }
 
 #content {
   float: left;
@@ -95,8 +110,30 @@ div.container {
   width: 74.41059%;
   color: #3C4151;
   font-size: 18px;
-  font-family: 'Source Serif Pro', serif; }
+  font-family: 'Source Serif Pro', serif;
+  line-height: 28px; }
   #content:last-child {
     margin-right: 0; }
+  #content h1 {
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'Source Sans Pro', serif;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #C1C6D1;
+    margin-bottom: 20px; }
+  #content a, #content a:visited {
+    color: #3C4151; }
+  #content a {
+    text-decoration: none;
+    border-bottom: 1px solid #C4C6CA; }
+  #content h2 {
+    color: #7CCFAF;
+    font-family: 'Source Sans Pro', sans-serif;
+    padding-bottom: 20px;
+    font-weight: normal;
+    font-size: 20px;
+    text-transform: uppercase; }
+  #content div.section {
+    margin-bottom: 20px; }
 
 /*# sourceMappingURL=style.css.map */
