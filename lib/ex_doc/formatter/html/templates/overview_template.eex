@@ -20,7 +20,6 @@
     </script>
 
     <div id="content">
-      <div class="breadcrumbs"><%= page_breadcrumbs(config, "Overview", "overview.html") %></div>
 
       <h1><%= config.project %> v<%= config.version %></h1>
 
@@ -37,21 +36,21 @@
       </ul>
 
       <%= unless Enum.empty?(modules) do %>
-        <h2 id="modules_summary">Modules summary <%= to_top_link() %></h2>
+        <h2 id="modules_summary">Modules summary</h2>
         <table class="summary">
           <%= for node <- modules, do: overview_entry_template(node) %>
         </table>
       <% end %>
 
       <%= unless Enum.empty?(exceptions) do %>
-        <h2 id="exceptions_summary">Exceptions summary <%= to_top_link() %></h2>
+        <h2 id="exceptions_summary">Exceptions summary</h2>
         <table class="summary">
           <%= for node <- exceptions, do: overview_entry_template(node) %>
         </table>
       <% end %>
 
       <%= unless Enum.empty?(protocols) do %>
-        <h2 id="protocols_summary">Protocols summary <%= to_top_link() %></h2>
+        <h2 id="protocols_summary">Protocols summary</h2>
         <table class="summary">
           <%= for node <- protocols, do: overview_entry_template(node) %>
         </table>

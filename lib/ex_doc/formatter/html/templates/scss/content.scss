@@ -34,7 +34,46 @@
 
 
   div.section {
+    @include span-columns(9 of 9);
+    @include omega();
     margin-bottom: 20px;
+
+    div.detail {
+      @include span-columns(9 of 9);
+      margin-bottom: 35px;
+
+      div.detail_header {
+        @include span-columns(9 of 9);
+        background: #eee;
+        margin-bottom: 10px;
+
+        div.title {
+          @include span-columns(7 of 9);
+
+          h3 {
+            font-family: 'Source Code Pro';
+            font-size: 15px;
+            padding-left: 10px;
+          }
+        }
+        div.detail_header_links {
+          @include span-columns(2 of 9);
+
+          padding-right: 10px;
+          span {
+            float: right;
+            padding-left: 10px;
+            font-size: 14px;
+            font-family: 'Source Sans Pro';
+            font-weight: 300;
+
+            a {
+              border: none;
+            }
+          }
+        }
+      }
+    }
   }
 
 }

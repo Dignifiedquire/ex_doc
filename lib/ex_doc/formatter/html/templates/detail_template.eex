@@ -1,11 +1,26 @@
 <div class="detail">
   <div class="detail_header" id="<%=h node.id %>">
-    <span class="signature"><%=h node.signature %></span>
-    <div class="detail_header_links">
-      <span class="detail_type">(<%= pretty_type(node) %>)</span>
-      <a href="#<%=h node.id%>" class="detail_link" title="Link to this <%= pretty_type(node) %>">#</a>
-      <%= to_top_link() %>
+    <div class="title">
+      <h3><%=h node.signature %></h3>
     </div>
+    <div class="detail_header_links">
+      <span>
+        <a href="#<%=h node.id%>" class="detail_link" title="Direct Link">
+          <i class="fa fa-link"></i>
+        </a>
+      </span>
+      <%= if node.source do %>
+        <span>
+          <a href="<%= node.source %>" class="view_source" title="View Source">
+            <i class="fa fa-code"></i>
+          </a>
+        </span>
+      <% end %>
+      <span class="detail_type">
+        (<%= pretty_type(node) %>)
+      </span>
+    </div>
+
   </div>
   <%= if specs = get_specs(node) do %>
     <p>Specs:</p>
@@ -16,7 +31,4 @@
     </ul>
   <% end %>
   <div class="docstring"><%= to_html(node.doc) %></div>
-  <%= if node.source do %>
-    <a href="<%= node.source %>" class="view_source">Source</a>
-  <% end %>
 </div>

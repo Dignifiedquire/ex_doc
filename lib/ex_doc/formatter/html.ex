@@ -99,7 +99,7 @@ defmodule ExDoc.Formatter.HTML do
   end
 
   defp generate_module_page(node, page, modules, output, config) do
-    content = page.(Templates.module_page(node, config, modules))
+    content = page.(Templates.module_template(node, config, modules))
     File.write("#{output}/#{node.id}.html", content)
   end
 

@@ -3,21 +3,37 @@
     <a href="<%= node.id %>.html" title="<%= node.id %>"><%= node.id %></a>
   </span>
   <ul class="subsection">
-    <li>
-      <a href="<%= node.id %>.html#introduction">Introduction</a>
-    </li>
+    <%= if node.moduledoc do %>
+      <li>
+        <a href="<%= node.id %>.html#introduction">Introduction</a>
+      </li>
+    <% end %>
+    <%= unless Enum.empty?(node.typespecs) do %>
     <li>
       <a href="<%= node.id %>.html#types">Types</a>
     </li>
+    <% end %>
+    <%= unless Enum.empty?(get_functions node) do %>
     <li>
       <a href="<%= node.id %>.html#functions">Functions</a>
       <ul class="functions">
-        <%= for doc <- node.docs do  %>
+        <%= for doc <- node.docs do %>
           <li>
             <a href="<%= node.id %>.html#<%=h doc.id %>"><%=h doc.id %></a>
           </li>
         <% end %>
       </ul>
     </li>
+    <% end %>
+    <%= unless Enum.empty?(get_macros node) do %>
+    <li>
+      <a href="<%= node.id %>.html#macros">Macros</a>
+    </li>
+    <% end %>
+    <%= unless Enum.empty?(get_callbacks node) do %>
+    <li>
+      <a href="<%= node.id %>.html#callbacks">Callbacks</a>
+    </li>
+    <% end %>
   </ul>
 </li>

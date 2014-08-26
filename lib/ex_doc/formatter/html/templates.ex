@@ -5,15 +5,16 @@ defmodule ExDoc.Formatter.HTML.Templates do
 
   require EEx
 
-  @doc """
-  Generate content from the module template for a given `node`
-  """
-  def module_page(node, config, all) do
-    types       = node.typespecs
-    functions   = Enum.filter node.docs, &match?(%ExDoc.FunctionNode{type: :def}, &1)
-    macros      = Enum.filter node.docs, &match?(%ExDoc.FunctionNode{type: :defmacro}, &1)
-    callbacks   = Enum.filter node.docs, &match?(%ExDoc.FunctionNode{type: :defcallback}, &1)
-    module_template(config, node, types, functions, macros, callbacks, all)
+  def get_functions(modules) do
+      Enum.filter modules.docs, &match?(%ExDoc.FunctionNode{type: :def}, &1)
+  end
+
+  def get_macros(modules) do
+      Enum.filter modules.docs, &match?(%ExDoc.FunctionNode{type: :defmacro}, &1)
+  end
+
+  def get_callbacks(modules) do
+      Enum.filter modules.docs, &match?(%ExDoc.FunctionNode{type: :defcallback}, &1)
   end
 
   # Get the full specs from a function, already in HTML form.
@@ -42,11 +43,6 @@ defmodule ExDoc.Formatter.HTML.Templates do
     String.split(doc, ~r/\n\s*\n/) |> hd |> String.strip() |> String.rstrip(?.)
   end
 
-  # A bit of standard HTML to insert the to-top arrow.
-  defp to_top_link() do
-    "<a class=\"to_top_link\" href=\"#content\" title=\"To the top of the page\">&uarr;</a>"
-  end
-
   defp presence([]),    do: nil
   defp presence(other), do: other
 
@@ -55,51 +51,18 @@ defmodule ExDoc.Formatter.HTML.Templates do
     Enum.reduce escape_map, binary, fn({ re, escape }, acc) -> Regex.replace(re, acc, escape) end
   end
 
-  # Get the breadcrumbs HTML.
-  #
-  # If module is :overview generates the breadcrumbs for the overview.
-  defp module_breadcrumbs(config, modules, module) do
-    parts = [root_breadcrumbs(config), { "Overview", "overview.html" }]
-    aliases = Module.split(module.module)
-    modules = Enum.map(modules, &(&1.module))
-
-    { crumbs, _ } =
-      Enum.map_reduce(aliases, [], fn item, parents ->
-        path = parents ++ [item]
-        mod  = Module.concat(path)
-        page = if mod in modules, do: inspect(mod) <> ".html"
-        { { item, page }, path }
-      end)
-
-    generate_breadcrumbs(parts ++ crumbs)
-  end
-
-  defp page_breadcrumbs(config, title, link) do
-    generate_breadcrumbs [root_breadcrumbs(config), { title, link }]
-  end
-
-  defp root_breadcrumbs(config) do
-    { "#{config.project} v#{config.version}", nil }
-  end
-
-  defp generate_breadcrumbs(crumbs) do
-    Enum.map_join(crumbs, " &rarr; ", fn { name, ref } ->
-      if ref, do: "<a href=\"#{h(ref)}\">#{h(name)}</a>", else: h(name)
-    end)
-  end
-
   templates = [
     layout_template: [:content, :config, :nodes],
     index_template: [:config, :nodes, :has_readme],
     list_template: [:scope, :nodes, :config],
     overview_template: [:config, :modules, :exceptions, :protocols],
-    module_template: [:config, :module, :types, :functions, :macros, :callbacks, :all],
+    module_template: [:module, :config, :all],
     readme_template: [:config, :content],
     list_item_template: [:node],
     overview_entry_template: [:node],
     summary_template: [:node],
-    detail_template: [:node, :_module],
-    type_detail_template: [:node, :_module],
+    detail_template: [:node],
+    type_detail_template: [:node],
   ]
 
   Enum.each templates, fn({ name, args }) ->

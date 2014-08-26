@@ -134,6 +134,66 @@ div.container {
     font-size: 20px;
     text-transform: uppercase; }
   #content div.section {
+    float: left;
+    display: block;
+    margin-right: 3.16844%;
+    width: 100%;
+    margin-right: 0;
     margin-bottom: 20px; }
+    #content div.section:last-child {
+      margin-right: 0; }
+    #content div.section div.detail {
+      float: left;
+      display: block;
+      margin-right: 3.16844%;
+      width: 100%;
+      margin-bottom: 35px; }
+      #content div.section div.detail:last-child {
+        margin-right: 0; }
+      #content div.section div.detail div.detail_header {
+        float: left;
+        display: block;
+        margin-right: 3.16844%;
+        width: 100%;
+        background: #eee;
+        margin-bottom: 10px; }
+        #content div.section div.detail div.detail_header:last-child {
+          margin-right: 0; }
+        #content div.section div.detail div.detail_header div.title {
+          float: left;
+          display: block;
+          margin-right: 3.16844%;
+          width: 77.07368%; }
+          #content div.section div.detail div.detail_header div.title:last-child {
+            margin-right: 0; }
+          #content div.section div.detail div.detail_header div.title h3 {
+            font-family: 'Source Code Pro';
+            font-size: 15px;
+            padding-left: 10px; }
+        #content div.section div.detail div.detail_header div.detail_header_links {
+          float: left;
+          display: block;
+          margin-right: 3.16844%;
+          width: 19.75788%;
+          padding-right: 10px; }
+          #content div.section div.detail div.detail_header div.detail_header_links:last-child {
+            margin-right: 0; }
+          #content div.section div.detail div.detail_header div.detail_header_links span {
+            float: right;
+            padding-left: 10px;
+            font-size: 14px;
+            font-family: 'Source Sans Pro';
+            font-weight: 300; }
+            #content div.section div.detail div.detail_header div.detail_header_links span a {
+              border: none; }
+
+code {
+  font-family: 'Source Code Pro';
+  font-size: 14px;
+  font-weight: 300;
+  background-color: #FAFAFC;
+  border: 1px solid #E3E4E8;
+  white-space: nowrap;
+  vertical-align: middle; }
 
 /*# sourceMappingURL=style.css.map */
