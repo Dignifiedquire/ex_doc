@@ -17,7 +17,8 @@ defmodule ExDoc.Formatter.HTML do
 
     all = Autolink.all(modules)
     page = &generate_page(&1, all, output, config)
-    has_readme = config.readme && generate_readme(config)
+    #has_readme = config.readme && generate_readme(config)
+    has_readme = generate_readme(config)
 
     generate_index(page, all, output, config, has_readme)
     generate_module_pages(page, all, output, config)

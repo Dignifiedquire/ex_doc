@@ -6,13 +6,7 @@
 
 @import 'variables';
 @import 'fonts';
-
-
-body {
-  color: $white;
-  background: $white;
-  font-family: 'Source Sans Pro', Arial, sans-serif;
-}
+@import 'base';
 
 div.container {
   @include outer-container;

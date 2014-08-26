@@ -8,13 +8,13 @@
 
 <%= if module.moduledoc do %>
 <div id="moduledoc" class="section">
-  <h2>
+  <h2 class="section-title">
     Introduction
     <a href="#introduction" class="detail_link" title="Introduction">#</a>
   </h2>
-  <p>
+  <div class="section-content">
     <%= to_html(module.moduledoc) %>
-  </p>
+  </div>
   <%= if module.source do %>
     <a href="<%= module.source %>" class="view_source">Source</a>
   <% end %>
@@ -24,17 +24,17 @@
 
 <%= unless Enum.empty?(module.typespecs) do %>
   <div id="types_details" class="section">
-    <h2>
+    <h2 class="section-title">
       Types
       <a href="#types" class="detail_link" title="Types">#</a>
     </h2>
-    <%= for node <- module.types, do: type_detail_template(node) %>
+    <%= for node <- module.typespecs, do: type_detail_template(node) %>
   </div>
 <% end %>
 
 <%= unless Enum.empty?(get_functions module) do %>
   <div id="functions_details" class="section">
-    <h2>
+    <h2 class="section-title">
       Functions
       <a href="#functions" class="detail_link" title="Functions">#</a>
     </h2>
@@ -44,7 +44,7 @@
 
 <%= unless Enum.empty?(get_macros module) do %>
   <div id="macros_details" class="section">
-    <h2>
+    <h2 class="section-title">
       Macros
       <a href="#macros" class="detail_link" title="Macros">#</a>
     </h2>
@@ -54,7 +54,7 @@
 
 <%= unless Enum.empty?(get_callbacks module) do %>
   <div id="callbacks_details" class="section">
-    <h2>
+    <h2 class="section-title">
       Callbacks
       <a href="#callbacks" class="detail_link" title="Callbacks">#</a>
     </h2>
