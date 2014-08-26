@@ -14,25 +14,33 @@ defmodule ExDoc.Formatter.HTML do
     :ok = File.mkdir_p output
 
     generate_assets(output, config)
-    has_readme = config.readme && generate_readme(output, config)
 
     all = Autolink.all(modules)
-    modules    = filter_list(:modules, all)
-    exceptions = filter_list(:exceptions, all)
-    protocols  = filter_list(:protocols, all)
+    page = &generate_page(&1, all, output, config)
+    has_readme = config.readme && generate_readme(config)
 
-    generate_index(modules, all, exceptions, protocols, output, config, has_readme)
-    generate_overview(modules, exceptions, protocols, output, config)
+    generate_index(page, all, output, config, has_readme)
+    generate_module_pages(page, all, output, config)
 
     Path.join(config.output, "index.html")
   end
 
-  defp generate_index(modules, all, exceptions, protocols, output, config, has_readme) do
-    modules_list = generate_list(:modules, modules, all, output, config, has_readme)
-    exceptions_list = generate_list(:exceptions, exceptions, all, output, config, has_readme)
-    protocols_list = generate_list(:protocols, protocols, all, output, config, has_readme)
+  defp generate_page(content, all, output, config) do
+    nodes = %{ modules:    filter_list(:modules, all),
+               exceptions: filter_list(:exceptions, all),
+               protocols:  filter_list(:protocols, all)}
 
-    content = Templates.index_template(config, modules_list, exceptions_list, protocols_list, has_readme)
+    Templates.layout_template(content, config, nodes)
+  end
+
+  defp generate_module_pages(page, all, output, config) do
+    Enum.each all, &generate_module_page(&1, page, all, output, config)
+  end
+
+
+  defp generate_index(page, all, output, config, has_readme) do
+    content = page.(Templates.index_template(config, all, has_readme))
+
     :ok = File.write("#{output}/index.html", content)
   end
 
@@ -58,22 +66,14 @@ defmodule ExDoc.Formatter.HTML do
     end
   end
 
-  defp generate_readme(output, config) do
-    File.rm("#{output}/README.html")
-    write_readme(output, File.read("README.md"), config)
-  end
-
-  defp write_readme(output, {:ok, content}, config) do
-    readme_html = Templates.readme_template(config, content)
-    # Allow using nice codeblock syntax for readme too.
-    readme_html = String.replace(readme_html, "<pre><code>",
-                                 "<pre class=\"codeblock\"><code>")
-    File.write("#{output}/README.html", readme_html)
-    true
-  end
-
-  defp write_readme(_, _, _) do
-    false
+  defp generate_readme(config) do
+    case File.read("README.md") do
+      {:ok, content} ->
+        readme_html = Templates.readme_template(config, content)
+        String.replace(readme_html, "<pre><code>",
+                                    "<pre class=\"codeblock\"><code>")
+      _ -> false
+    end
   end
 
   @doc false
@@ -98,13 +98,8 @@ defmodule ExDoc.Formatter.HTML do
     Enum.filter nodes, &match?(%ExDoc.ModuleNode{type: x} when x in [:protocol], &1)
   end
 
-  defp generate_list(scope, nodes, all, output, config, has_readme) do
-    Enum.each nodes, &generate_module_page(&1, all, output, config)
-    Templates.list_page(scope, nodes, config, has_readme)
-  end
-
-  defp generate_module_page(node, modules, output, config) do
-    content = Templates.module_page(node, config, modules)
+  defp generate_module_page(node, page, modules, output, config) do
+    content = page.(Templates.module_page(node, config, modules))
     File.write("#{output}/#{node.id}.html", content)
   end
 

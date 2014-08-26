@@ -16,13 +16,6 @@ defmodule ExDoc.Formatter.HTML.Templates do
     module_template(config, node, types, functions, macros, callbacks, all)
   end
 
-  @doc """
-  Generates the listing.
-  """
-  def list_page(scope, nodes, config, has_readme) do
-    list_template(scope, nodes, config, has_readme)
-  end
-
   # Get the full specs from a function, already in HTML form.
   defp get_specs(%ExDoc.FunctionNode{specs: specs}) when is_list(specs) do
     presence specs
@@ -96,8 +89,9 @@ defmodule ExDoc.Formatter.HTML.Templates do
   end
 
   templates = [
-    index_template: [:config, :modules, :exceptions, :protocols, :has_readme],
-    list_template: [:scope, :nodes, :config, :has_readme],
+    layout_template: [:content, :config, :nodes],
+    index_template: [:config, :nodes, :has_readme],
+    list_template: [:scope, :nodes, :config],
     overview_template: [:config, :modules, :exceptions, :protocols],
     module_template: [:config, :module, :types, :functions, :macros, :callbacks, :all],
     readme_template: [:config, :content],
