@@ -37,27 +37,31 @@ Now you are ready to generate your project documentation with `mix docs`.
 You can ExDoc via the command line as follows:
 
 1. First clone and compile it:
-
-        git clone https://github.com/elixir-lang/ex_doc.git
-        cd ex_doc
-        mix do deps.get, compile
+  ```bash
+  $ git clone https://github.com/elixir-lang/ex_doc.git
+  $ cd ex_doc
+  $ mix do deps.get, compile
+  ```
 
 2. Then you are ready to use it in your projects. First move into your project directory and ensure it is compiled:
-
-        cd PATH_TO_YOUR_PROJECT
-        mix compile
+  ```bash
+  $ cd PATH_TO_YOUR_PROJECT
+  $ mix compile
+  ```
 
 3. Next invoke the ex_doc executable from your project:
-
-        PATH_TO_YOUR_EXDOC/bin/ex_doc "PROJECT_NAME" "PROJECT_VERSION" path/to/project/ebin -m "PROJECT_MODULE" -u "https://github.com/GITHUB_USER/GITHUB_REPO"
+  ```bash
+  PATH_TO_YOUR_EXDOC/bin/ex_doc "PROJECT_NAME" "PROJECT_VERSION" path/to/project/ebin -m "PROJECT_MODULE" -u "https://github.com/GITHUB_USER/GITHUB_REPO"
+  ```
 
 For example, here are some acceptable values:
-
-    PROJECT_NAME    => Dynamo
-    PROJECT_VERSION => 0.1.0
-    PROJECT_MODULE  => Dynamo (the main module provided by the library)
-    GITHUB_USER     => elixir-lang
-    GITHUB_REPO     => dynamo
+```
+PROJECT_NAME    => Dynamo
+PROJECT_VERSION => 0.1.0
+PROJECT_MODULE  => Dynamo (the main module provided by the library)
+GITHUB_USER     => elixir-lang
+GITHUB_REPO     => dynamo
+```
 
 ## Changing the Markdown tool
 
@@ -68,8 +72,9 @@ In the examples above, we have used [Earmark](http://github.com/pragdave/earmark
   * To use hoedown - add http://github.com/devinus/markdown as a dependency to your project as: `{:markdown, github: "devinus/markdown"}`
 
 Then add the entry:
-
-    config :ex_doc, :markdown_processor, ExDoc.Markdown.Pandoc  # or ExDoc.Markdown.Hoedown
+```elixir
+config :ex_doc, :markdown_processor, ExDoc.Markdown.Pandoc  # or ExDoc.Markdown.Hoedown
+```
 
 to your `config/config.exs` file.
 
@@ -80,13 +85,13 @@ To see all options available when generating docs, just run `mix help docs`.
 If you want to update the css, you need to have ruby installed and run
 
 ```bash
-gem install sass
+$ gem install sass
 ```
 
 Then to compile the new css run
 
 ```bash
-sass lib/ex_doc/formatter/html/templates/scss/style.scss lib/ex_doc/formatter/html/templates/css/style.css
+$ sass lib/ex_doc/formatter/html/templates/scss/style.scss lib/ex_doc/formatter/html/templates/css/style.css
 ```
 
 # License
