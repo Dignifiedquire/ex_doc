@@ -31,12 +31,12 @@
 
   <div class="container">
     <div id="navigation">
-      <div class="nav">
-        <span><a target="_self" href="modules_list.html">Modules</a></span>
-        <span><a target="_self" href="exceptions_list.html">Exceptions</a></span>
-        <span><a target="_self" href="protocols_list.html">Protocols</a></span>
+      <div class="switcher">
+        <a target="_self" class="active" href="modules_list.html">Modules</a>
+        <a target="_self" href="exceptions_list.html">Exceptions</a>
+        <a target="_self" href="protocols_list.html">Protocols</a>
       </div>
-      <div id="search">Search: <input type="text" /></div>
+      <div class="search"><input type="text" placeholder="search"/></div>
       <%= list_template(:modules, nodes.modules, config) %>
       <%= list_template(:protocols, nodes.protocols, config) %>
       <%= list_template(:exceptions, nodes.exceptions, config) %>

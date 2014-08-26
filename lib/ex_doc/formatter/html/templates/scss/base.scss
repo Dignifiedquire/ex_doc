@@ -3,4 +3,13 @@ body {
   color: $white;
   background: $white;
   font-family: 'Source Sans Pro', Arial, sans-serif;
+
+
+  a, a:visited {
+    color: $dark_gray;
+  }
+  a {
+    text-decoration: none;
+    border-bottom: 1px solid #C4C6CA;
+  }
 }

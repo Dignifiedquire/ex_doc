@@ -40,6 +40,11 @@ body {
   color: #FFFFFF;
   background: #FFFFFF;
   font-family: 'Source Sans Pro', Arial, sans-serif; }
+  body a, body a:visited {
+    color: #3C4151; }
+  body a {
+    text-decoration: none;
+    border-bottom: 1px solid #C4C6CA; }
 
 div.container {
   max-width: 68em;
@@ -80,6 +85,28 @@ div.container {
     text-decoration: none;
     color: #3C4151;
     font-weight: 300; }
+  #navigation div.switcher {
+    margin-left: 10px;
+    margin-bottom: 10px; }
+    #navigation div.switcher a {
+      font-weight: 500;
+      color: #959cad;
+      border-left: 1px solid #ced2d9;
+      padding: 0;
+      margin: 0;
+      padding-left: 4px;
+      padding-right: 4px; }
+      #navigation div.switcher a:first-child {
+        border: none;
+        padding: 0; }
+      #navigation div.switcher a.active {
+        color: #3c4151;
+        font-weight: bold; }
+  #navigation div.search input {
+    margin: 10px;
+    border: 1px solid black;
+    padding: 5px;
+    width: 70%; }
   #navigation ul.section {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -129,11 +156,6 @@ div.container {
     padding-bottom: 25px;
     border-bottom: 1px solid #C1C6D1;
     margin-bottom: 20px; }
-  #content a, #content a:visited {
-    color: #3C4151; }
-  #content a {
-    text-decoration: none;
-    border-bottom: 1px solid #C4C6CA; }
   #content h2.section-title {
     color: #7CCFAF;
     font-family: 'Source Sans Pro', sans-serif;
@@ -141,7 +163,7 @@ div.container {
     font-weight: normal;
     font-size: 20px;
     text-transform: uppercase; }
-  #content div.section-content h2 {
+  #content h2 {
     font-size: 28px;
     font-weight: bold;
     font-family: 'Source Sans Pro', sans-serif;
@@ -164,6 +186,11 @@ div.container {
       margin-bottom: 35px; }
       #content div.section div.detail:last-child {
         margin-right: 0; }
+      #content div.section div.detail h4 {
+        font-family: 'Source Sans Pro';
+        font-weight: bold;
+        margin-bottom: 10px;
+        margin-top: 15px; }
       #content div.section div.detail div.detail_header {
         float: left;
         display: block;
@@ -210,12 +237,19 @@ code {
   border: 1px solid #E3E4E8;
   vertical-align: middle; }
 
+pre.spec {
+  margin: 0; }
+  pre.spec code {
+    padding: 0; }
+
 pre {
   margin-top: 10px;
   margin-bottom: 10px; }
   pre code {
     white-space: inherit;
-    padding-left: 20px; }
+    padding: 15px; }
+    pre code a, pre code a:visited {
+      color: white; }
 
 /* Tomorrow Comment */
 .hljs-comment,
@@ -286,7 +320,6 @@ pre {
   overflow-x: auto;
   background: #2b2f3e;
   color: white;
-  padding: 0.5em;
   -webkit-text-size-adjust: none; }
   .hljs span {
     white-space: inherit; }

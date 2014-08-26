@@ -23,10 +23,10 @@
 
   </div>
   <%= if specs = get_specs(node) do %>
-    <p>Specs:</p>
-    <ul class="spec">
+    <h4>Specs</h4>
+    <ul>
       <%= for spec <- specs do %>
-        <li><%= spec %></li>
+        <li><code><%= String.strip(spec) %></code></li>
       <% end %>
     </ul>
   <% end %>

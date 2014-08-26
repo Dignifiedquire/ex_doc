@@ -9,12 +9,23 @@ code {
   vertical-align: middle;
 }
 
+pre.spec {
+  margin: 0;
+  code {
+    padding: 0;
+  }
+}
+
 pre {
   margin-top: 10px;
   margin-bottom: 10px;
   code {
     white-space: inherit;
-    padding-left: 20px;
+    padding: 15px;
+
+    a, a:visited {
+      color: white;
+    }
   }
 }
 
@@ -95,7 +106,6 @@ pre {
   overflow-x: auto;
   background: #2b2f3e;
   color: white;
-  padding: 0.5em;
   -webkit-text-size-adjust: none;
 
   span {
