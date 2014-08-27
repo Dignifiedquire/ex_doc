@@ -16,7 +16,7 @@ defmodule ExDoc.Formatter.HTML do
     generate_assets(output, config)
 
     all = Autolink.all(modules)
-    page = &generate_page(&1, all, output, config)
+    page = &generate_page(&1, all, output, config, &2)
     #has_readme = config.readme && generate_readme(config)
     has_readme = generate_readme(config)
 
@@ -26,12 +26,15 @@ defmodule ExDoc.Formatter.HTML do
     Path.join(config.output, "index.html")
   end
 
-  defp generate_page(content, all, output, config) do
-    nodes = %{ modules:    filter_list(:modules, all),
-               exceptions: filter_list(:exceptions, all),
-               protocols:  filter_list(:protocols, all)}
+  defp generate_nodes(all) do
+    %{ modules:    filter_list(:modules, all),
+       exceptions: filter_list(:exceptions, all),
+       protocols:  filter_list(:protocols, all)}
+  end
 
-    Templates.layout_template(content, config, nodes)
+  defp generate_page(content, all, output, config, module) do
+    nodes = generate_nodes(all)
+    Templates.layout_template(content, config, nodes, module)
   end
 
   defp generate_module_pages(page, all, output, config) do
@@ -40,7 +43,7 @@ defmodule ExDoc.Formatter.HTML do
 
 
   defp generate_index(page, all, output, config, has_readme) do
-    content = page.(Templates.index_template(config, all, has_readme))
+    content = page.(Templates.index_template(config, all, has_readme), false)
 
     :ok = File.write("#{output}/index.html", content)
   end
@@ -101,7 +104,7 @@ defmodule ExDoc.Formatter.HTML do
   end
 
   defp generate_module_page(node, page, modules, output, config) do
-    content = page.(Templates.module_template(node, config, modules))
+    content = page.(Templates.module_template(node, config, modules), node)
     File.write("#{output}/#{node.id}.html", content)
   end
 

@@ -51,14 +51,19 @@ defmodule ExDoc.Formatter.HTML.Templates do
     Enum.reduce escape_map, binary, fn({ re, escape }, acc) -> Regex.replace(re, acc, escape) end
   end
 
+  defp css(binary) do
+    escape_map = [{ ~r(\.), "-" }, { ~r(&), "-" }, { ~r(<), "-" }, { ~r(>), "-" }, { ~r("), "" }]
+    Enum.reduce escape_map, binary, fn({ re, escape }, acc) -> Regex.replace(re, acc, escape) end
+  end
+
   templates = [
-    layout_template: [:content, :config, :nodes],
+    layout_template: [:content, :config, :nodes, :module],
     index_template: [:config, :nodes, :has_readme],
-    list_template: [:scope, :nodes, :config],
+    list_template: [:scope, :nodes, :config, :module],
     overview_template: [:config, :modules, :exceptions, :protocols],
     module_template: [:module, :config, :all],
     readme_template: [:config, :content],
-    list_item_template: [:node],
+    list_item_template: [:node, :module],
     overview_entry_template: [:node],
     summary_template: [:node],
     detail_template: [:node],

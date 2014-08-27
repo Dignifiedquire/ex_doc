@@ -1,8 +1,10 @@
-<li>
+<li id="nav-<%= css node.id %>">
   <span class="title">
-    <a href="<%= node.id %>.html" title="<%= node.id %>"><%= node.id %></a>
+    <a href="<%= node.id %>.html" title="<%= node.id %>" data-toggle="collapse" data-parent="#nav-<%= css node.id %>" data-target="#subnav-<%= css node.id %>">
+      <%= node.id %>
+    </a>
   </span>
-  <ul class="subsection">
+  <ul id="subnav-<%= css node.id %>" class="subsection collapse <%= if(module != false and (module.id == node.id), do: "in") %>">
     <%= if node.moduledoc do %>
       <li>
         <a href="<%= node.id %>.html#introduction">Introduction</a>

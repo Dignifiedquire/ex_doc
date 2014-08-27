@@ -1,6 +1,8 @@
 #navigation {
   @include span-columns(3);
 
+  margin-top: 120px;
+
   a {
     text-decoration: none;
     color: $dark_gray;
@@ -75,4 +77,8 @@
       }
     }
   }
+}
+
+.affix {
+  position: fixed;
 }
