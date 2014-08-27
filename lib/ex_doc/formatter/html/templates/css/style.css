@@ -60,14 +60,28 @@ div.container {
   height: 70px;
   background: #4C5264;
   margin-bottom: 50px; }
+  #header .wrapper {
+    max-width: 68em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -3px; }
+    #header .wrapper:after {
+      content: "";
+      display: table;
+      clear: both; }
+  #header .logo {
+    float: left;
+    margin-right: 18px;
+    margin-top: -4px;
+    padding-left: 10px; }
   #header .title {
-    margin-left: 50px; }
+    float: left; }
     #header .title h1 {
       padding-bottom: 4px; }
       #header .title h1 a {
         color: #FFFFFF;
         text-decoration: none;
-        font-size: 20px; }
+        font-size: 18px; }
     #header .title h2 {
       color: #959CAD;
       font-weight: 300;

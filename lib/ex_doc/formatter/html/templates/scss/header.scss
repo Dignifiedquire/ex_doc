@@ -6,9 +6,18 @@
   background: $mid_gray;
   margin-bottom: 50px;
 
+  .wrapper {
+    @include outer-container;
+    margin-top: -3px;
+  }
+  .logo {
+    float: left;
+    margin-right: 18px;
+    margin-top: -4px;
+    padding-left: 10px;
+  }
   .title {
-
-    margin-left: 50px;
+    float: left;
 
     h1 {
       padding-bottom: 4px;
@@ -16,7 +25,7 @@
       a {
         color: $white;
         text-decoration: none;
-        font-size: 20px;
+        font-size: 18px;
       }
     }
     h2 {
