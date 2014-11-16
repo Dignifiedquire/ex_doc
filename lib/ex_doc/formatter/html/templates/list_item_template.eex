@@ -1,6 +1,6 @@
 <li id="nav-<%= css node.id %>">
   <span class="title">
-    <a href="<%= node.id %>.html" title="<%= node.id %>" data-toggle="collapse" data-parent="#nav-<%= css node.id %>" data-target="#subnav-<%= css node.id %>">
+    <a href="<%= node.id %>.html" title="<%= node.id %>">
       <%= node.id %>
     </a>
   </span>
