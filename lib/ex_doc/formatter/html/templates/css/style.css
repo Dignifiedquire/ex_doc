@@ -545,15 +545,26 @@ a.detail_link {
 
 /* Layout */
 
-#sidebar {
+#header {
   position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+  background: #4c5264;
+  padding: 20px 40px;
+}
+
+#sidebar {
+  position: fixed;
+  top: 70px;
   bottom: 0;
   left: 0;
   overflow-y: auto;
   overflow-x: hidden;
   border: none;
-  width: 250px;
+  padding: 30px;
+  width: 310px;
   background: #fff;
   box-sizing: border-box;
   font-family: 'Source Sans Pro', Arial, sans-serif;
@@ -561,15 +572,40 @@ a.detail_link {
 
 #content {
   position: fixed;
-  top: 0;
+  top: 70px;
   bottom: 0;
   right: 0;
-  left: 255px;
+  left: 315px;
   overflow: auto;
-  padding: 0px;
+  padding: 30px 40px;
   box-sizing: border-box;
 }
 
+/* Header */
+
+#header a {
+  border: none;
+}
+
+#header h1 {
+  font-size: 18px;
+  line-height: 16px;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  border: none;
+  color: #FFFFFF;
+}
+
+#header h2 {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+  border: none;
+  color: #959cad;
+}
 
 /* Media print */
 
