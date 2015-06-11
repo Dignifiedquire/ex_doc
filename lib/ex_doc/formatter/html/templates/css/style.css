@@ -343,12 +343,21 @@ h1 small {
   font-size: 18px;
 }
 
-h2:not(#sub_list_header) {
+h2 {
   font-size: 28px;
   font-weight: bold;
   font-family: 'Source Sans Pro', sans-serif;
   margin-top: 35px;
   margin-bottom: 10px;
+}
+
+h2.section_heading {
+  color: #7CCFAF;
+  font-family: 'Source Sans Pro', sans-serif;
+  padding-bottom: 20px;
+  font-weight: normal;
+  font-size: 20px;
+  text-transform: uppercase;
 }
 
 .clear {
@@ -362,7 +371,7 @@ table {
 }
 
 table th {
-  background: #fafafa;
+
 }
 
 table th,
@@ -370,15 +379,6 @@ table td {
   border: 1px solid #ddd;
   padding: 0.4em 1em 0.4em 0.4em;
 }
-
-table tr:nth-child(odd) {
-  background: #f0f0f0;
-}
-
-table tr:nth-child(even) {
-  background: #fafafa;
-}
-
 
 /* OTHERS */
 
@@ -461,52 +461,54 @@ a.to_top_link {
   font-weight: normal;
 }
 
-table.summary {
-  border: 0;
-  border-collapse: separate;
+.summary {
+  padding: 0;
 }
 
-table.summary tr:nth-child(odd) {
-  background: #f0f0f0;
+.summary_row {
+  padding: 5px 0;
 }
 
-table.summary tr:nth-child(even) {
-  background: #fafafa;
+.summary_signature a {
+  font-family: 'Source Code Pro';
+  font-size: 15px;
+  background-color: #FAFAFC;
+  border: 1px solid #E3E4E8;
+  vertical-align: middle;
+  padding: 2px 5px;
 }
 
-table.summary tr td {
-  border: 0;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
+.summary_synopsis {
+
 }
 
-td.summary_signature {
-  padding-right: 0.5em;
-}
-
-td.summary_synopsis {
-  padding-left: 0.5em;
-}
-
-td.summary_synopsis p {
-  margin: 0;
+.summary_synopsis p {
+  margin: 0 10px;
+  font-style: italic;
 }
 
 
 /* DETAILS LIST */
 
-.details_list h2:not(#sub_list_header) {
-  color: #7CCFAF;
-  font-family: 'Source Sans Pro', sans-serif;
-  padding-bottom: 20px;
-  font-weight: normal;
-  font-size: 20px;
-  text-transform: uppercase;
-}
 
 .spec,
 .typespec {
-  font: bold 1em Courier, monospace;
+  font-family: 'Source Code Pro';
+  font-size: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+.typespec {
+  background-color: #FAFAFC;
+  border: 1px solid #E3E4E8;
+  vertical-align: middle;
+  padding: 0px 5px;
+}
+
+.spec a,
+.typespec a {
+  border: none;
 }
 
 ul.spec {
@@ -515,14 +517,16 @@ ul.spec {
 }
 
 .type_detail {
-  margin-top: 15px;
-  padding-top: 0;
+  margin: 20px 0 0 0;
 }
 
 .type_detail > div.typespec_doc {
-  margin-left: 3em;
+  margin-left: 10px;
 }
 
+.type_detail > div.typespec_doc > p {
+  margin: 5px 0;
+}
 .detail {
   margin-top: 15px;
   padding-top: 0;
