@@ -1,0 +1,53 @@
+<div class="main">
+<section class="sidebar">
+  <%= if url = config.homepage_url || config.source_url do %>
+    <h1 class="sidebar-projectName">
+      <a href="<%= url %>"><%= config.project %></a>
+    </h1>
+  <% else %>
+    <h1 class="sidebar-projectName"><%= config.project %></h1>
+  <% end %>
+  <h2 class="sidebar-projectVersion">v<%= config.version %></h2>
+
+  <ul class="sidebar-mainNav">
+    <%= if has_readme do %>
+      <li><a href="README.html">README</a></li>
+    <% end %>
+
+    <li><a href="overview.html">Overview</a></li>
+
+    <%= if Enum.empty?(modules) do %>
+      <li role="presentation" class="disabled">Modules</li>
+    <% else %>
+      <li><a id="modules_list" href="#full_list">Modules</a></li>
+    <% end %>
+
+    <%= if Enum.empty?(exceptions) do %>
+      <li role="presentation" class="disabled">Exceptions</li>
+    <% else %>
+      <li><a id="exceptions_list" href="#full_list">Exceptions</a></li>
+    <% end %>
+
+    <%= if Enum.empty?(protocols) do %>
+      <li role="presentation" class="disabled">Protocols</li>
+    <% else %>
+      <li><a id="protocols_list" href="#full_list">Protocols</a></li>
+    <% end %>
+  </ul>
+
+  <div class="sidebar-search">
+    <i class="fa fa-search"></i>
+    <input type="text" class="sidebar-searchInput" placeholder="search" autocomplete="off" results="0" />
+  </div>
+
+  <ul id="full_list" class="sidebar-fullList"></ul>
+  <div class="sidebar-noResults"></div>
+
+  <script src="dist/sidebar_items.js" defer></script>
+</section>
+
+<section class="content">
+  <div class="content-inner">
+    <button class="sidebar-toggle">
+      <i class="fa fa-bars"></i>
+    </button>

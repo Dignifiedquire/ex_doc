@@ -1,0 +1,326 @@
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+        <title>ExDoc.Formatter.HTML.Autolink – ex_doc v0.8.4</title>
+      
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.8.4">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,300,700,900|Merriweather:300italic,300,700,700italic|Inconsolata:400,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="dist/app.css" />
+  </head>
+  <body>
+
+    
+    <div class="main">
+<section class="sidebar">
+  
+    <h1 class="sidebar-projectName">
+      <a href="https://github.com/elixir-lang/ex_doc/">ex_doc</a>
+    </h1>
+  
+  <h2 class="sidebar-projectVersion">v0.8.4</h2>
+
+  <ul class="sidebar-mainNav">
+    
+
+    <li><a href="overview.html">Overview</a></li>
+
+    
+      <li><a id="modules_list" href="#full_list">Modules</a></li>
+    
+
+    
+      <li><a id="exceptions_list" href="#full_list">Exceptions</a></li>
+    
+
+    
+      <li role="presentation" class="disabled">Protocols</li>
+    
+  </ul>
+
+  <div class="sidebar-search">
+    <i class="fa fa-search"></i>
+    <input type="text" class="sidebar-searchInput" placeholder="search" autocomplete="off" results="0" />
+  </div>
+
+  <ul id="full_list" class="sidebar-fullList"></ul>
+  <div class="sidebar-noResults"></div>
+
+  <script src="dist/sidebar_items.js" defer></script>
+</section>
+
+<section class="content">
+  <div class="content-inner">
+    <button class="sidebar-toggle">
+      <i class="fa fa-bars"></i>
+    </button>
+
+
+      <h1>
+        ExDoc.Formatter.HTML.Autolink
+        
+        
+          <a href="https://github.com/elixir-lang/ex_doc/blob/master/lib/ex_doc/formatter/html/autolink.ex#L1" title="View Source" class="view-source" rel="help">
+            <i class="fa fa-code"></i>
+          </a>
+        
+      </h1>
+
+      <ul class="summary-links">
+        
+          <li><a href="#summary_details">Summary</a></li>
+        
+        
+        
+          <li><a href="#functions_details">Functions</a></li>
+        
+        
+        
+      </ul>
+
+      
+        <section id="moduledoc" class="docstring">
+          <p>Conveniences for autolinking locals, types and more.</p>
+
+        </section>
+      
+
+      
+        <section id="summary_details" class="details-list">
+          <h1 id="summary" class="section-heading">Summary</h1>
+          <div class="summary">
+            <div class="summary-row">
+  <div class="summary-signature"><a href="#all/1">all(modules)</a></div>
+  
+    <div class="summary-synopsis"><p>Receives a list of module nodes and autolink all docs and typespecs</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature"><a href="#erlang_functions/1">erlang_functions(bin)</a></div>
+  
+    <div class="summary-synopsis"><p>Create links to Erlang functions in code blocks</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature"><a href="#local_doc/2">local_doc(bin, locals)</a></div>
+  
+    <div class="summary-synopsis"><p>Create links to locally defined functions, specified in <code class="inline">locals</code>
+as a list of <code class="inline">fun/arity</code> strings</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature"><a href="#project_doc/3">project_doc(bin, modules, module_id \\ nil)</a></div>
+  
+    <div class="summary-synopsis"><p>Creates links to modules and functions defined in the project</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature"><a href="#project_functions/2">project_functions(bin, project_funs)</a></div>
+  
+    <div class="summary-synopsis"><p>Create links to functions defined in the project, specified in <code class="inline">project_funs</code>
+as a list of <code class="inline">Module.fun/arity</code> tuples</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature"><a href="#project_modules/3">project_modules(bin, modules, module_id \\ nil)</a></div>
+  
+    <div class="summary-synopsis"><p>Create links to modules defined in the project, specified in <code class="inline">modules</code>
+as a list</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature"><a href="#typespec/3">typespec(ast, typespecs, aliases)</a></div>
+  
+    <div class="summary-synopsis"><p>Converts the given <code class="inline">ast</code> to string while linking the locals
+given by <code class="inline">typespecs</code> as HTML</p>
+</div>
+  
+</div>
+
+          </div>
+        </section>
+      
+
+      
+
+      
+        <section id="functions_details" class="details-list">
+          <h1 class="section-heading">Functions</h1>
+          <div class="detail">
+  <div class="detail-header" id="all/1">
+    <a href="#all/1" class="detail-link" title="Link to this function">
+      <i class="fa fa-link"></i>
+    </a>
+    <span class="signature">all(modules)</span>
+      
+      <a href="https://github.com/elixir-lang/ex_doc/blob/master/lib/ex_doc/formatter/html/autolink.ex#L12" class="view-source" rel="help" title="View Source">
+       <i class="fa fa-code"></i>
+     </a>
+    
+  </div>
+  
+  <section class="docstring">
+    <p>Receives a list of module nodes and autolink all docs and typespecs.</p>
+
+  </section>
+</div>
+<div class="detail">
+  <div class="detail-header" id="erlang_functions/1">
+    <a href="#erlang_functions/1" class="detail-link" title="Link to this function">
+      <i class="fa fa-link"></i>
+    </a>
+    <span class="signature">erlang_functions(bin)</span>
+      
+      <a href="https://github.com/elixir-lang/ex_doc/blob/master/lib/ex_doc/formatter/html/autolink.ex#L240" class="view-source" rel="help" title="View Source">
+       <i class="fa fa-code"></i>
+     </a>
+    
+  </div>
+  
+  <section class="docstring">
+    <p>Create links to Erlang functions in code blocks.</p>
+<p>Only links modules that are in the Erlang distribution <code class="inline">lib_dir</code>
+and only link functions in those modules that export a function of the
+same name and arity.</p>
+<p>Ignores functions which are already wrapped in markdown url syntax,
+e.g. <code class="inline">[:module.test/1](url)</code>. If the function doesn’t touch the leading
+or trailing <code class="inline">]</code>, e.g. <code class="inline">[my link :module.link/1 is here](url)</code>, the :module.fun/arity
+will get translated to the new href of the function.</p>
+
+  </section>
+</div>
+<div class="detail">
+  <div class="detail-header" id="local_doc/2">
+    <a href="#local_doc/2" class="detail-link" title="Link to this function">
+      <i class="fa fa-link"></i>
+    </a>
+    <span class="signature">local_doc(bin, locals)</span>
+      
+      <a href="https://github.com/elixir-lang/ex_doc/blob/master/lib/ex_doc/formatter/html/autolink.ex#L141" class="view-source" rel="help" title="View Source">
+       <i class="fa fa-code"></i>
+     </a>
+    
+  </div>
+  
+  <section class="docstring">
+    <p>Create links to locally defined functions, specified in <code class="inline">locals</code>
+as a list of <code class="inline">fun/arity</code> strings.</p>
+<p>Ignores functions which are already wrapped in markdown url syntax,
+e.g. <code class="inline">[test/1](url)</code>. If the function doesn’t touch the leading
+or trailing <code class="inline">]</code>, e.g. <code class="inline">[my link link/1 is here](url)</code>, the fun/arity
+will get translated to the new href of the function.</p>
+
+  </section>
+</div>
+<div class="detail">
+  <div class="detail-header" id="project_doc/3">
+    <a href="#project_doc/3" class="detail-link" title="Link to this function">
+      <i class="fa fa-link"></i>
+    </a>
+    <span class="signature">project_doc(bin, modules, module_id \\ nil)</span>
+      
+      <a href="https://github.com/elixir-lang/ex_doc/blob/master/lib/ex_doc/formatter/html/autolink.ex#L155" class="view-source" rel="help" title="View Source">
+       <i class="fa fa-code"></i>
+     </a>
+    
+  </div>
+  
+  <section class="docstring">
+    <p>Creates links to modules and functions defined in the project.</p>
+
+  </section>
+</div>
+<div class="detail">
+  <div class="detail-header" id="project_functions/2">
+    <a href="#project_functions/2" class="detail-link" title="Link to this function">
+      <i class="fa fa-link"></i>
+    </a>
+    <span class="signature">project_functions(bin, project_funs)</span>
+      
+      <a href="https://github.com/elixir-lang/ex_doc/blob/master/lib/ex_doc/formatter/html/autolink.ex#L176" class="view-source" rel="help" title="View Source">
+       <i class="fa fa-code"></i>
+     </a>
+    
+  </div>
+  
+  <section class="docstring">
+    <p>Create links to functions defined in the project, specified in <code class="inline">project_funs</code>
+as a list of <code class="inline">Module.fun/arity</code> tuples.</p>
+<p>Ignores functions which are already wrapped in markdown url syntax,
+e.g. <code class="inline">[Module.test/1](url)</code>. If the function doesn’t touch the leading
+or trailing <code class="inline">]</code>, e.g. <code class="inline">[my link Module.link/1 is here](url)</code>, the Module.fun/arity
+will get translated to the new href of the function.</p>
+
+  </section>
+</div>
+<div class="detail">
+  <div class="detail-header" id="project_modules/3">
+    <a href="#project_modules/3" class="detail-link" title="Link to this function">
+      <i class="fa fa-link"></i>
+    </a>
+    <span class="signature">project_modules(bin, modules, module_id \\ nil)</span>
+      
+      <a href="https://github.com/elixir-lang/ex_doc/blob/master/lib/ex_doc/formatter/html/autolink.ex#L198" class="view-source" rel="help" title="View Source">
+       <i class="fa fa-code"></i>
+     </a>
+    
+  </div>
+  
+  <section class="docstring">
+    <p>Create links to modules defined in the project, specified in <code class="inline">modules</code>
+as a list.</p>
+<p>Ignores modules which are already wrapped in markdown url syntax,
+e.g. <code class="inline">[Module](url)</code>. If the module name doesn’t touch the leading
+or trailing <code class="inline">]</code>, e.g. <code class="inline">[my link Module is here](url)</code>, the Module
+will get translated to the new href of the module.</p>
+
+  </section>
+</div>
+<div class="detail">
+  <div class="detail-header" id="typespec/3">
+    <a href="#typespec/3" class="detail-link" title="Link to this function">
+      <i class="fa fa-link"></i>
+    </a>
+    <span class="signature">typespec(ast, typespecs, aliases)</span>
+      
+      <a href="https://github.com/elixir-lang/ex_doc/blob/master/lib/ex_doc/formatter/html/autolink.ex#L65" class="view-source" rel="help" title="View Source">
+       <i class="fa fa-code"></i>
+     </a>
+    
+  </div>
+  
+  <section class="docstring">
+    <p>Converts the given <code class="inline">ast</code> to string while linking the locals
+given by <code class="inline">typespecs</code> as HTML.</p>
+
+  </section>
+</div>
+
+        </section>
+      
+
+      
+
+      
+        <footer>
+      <p>
+        This site was built using <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" rel="help">ExDoc</a> (v0.8.4)
+        and <a href="http://elixir-lang.org/" title="Elixir" rel="help">Elixir</a>.
+      </p>
+    </footer>
+  </div>
+</section>
+</div>
+    <script src="dist/app.js"></script>
+  </body>
+</html>
+

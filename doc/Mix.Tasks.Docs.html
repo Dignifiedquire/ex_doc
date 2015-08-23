@@ -1,0 +1,145 @@
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+        <title>Mix.Tasks.Docs – ex_doc v0.8.4</title>
+      
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.8.4">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,300,700,900|Merriweather:300italic,300,700,700italic|Inconsolata:400,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="dist/app.css" />
+  </head>
+  <body>
+
+    
+    <div class="main">
+<section class="sidebar">
+  
+    <h1 class="sidebar-projectName">
+      <a href="https://github.com/elixir-lang/ex_doc/">ex_doc</a>
+    </h1>
+  
+  <h2 class="sidebar-projectVersion">v0.8.4</h2>
+
+  <ul class="sidebar-mainNav">
+    
+
+    <li><a href="overview.html">Overview</a></li>
+
+    
+      <li><a id="modules_list" href="#full_list">Modules</a></li>
+    
+
+    
+      <li><a id="exceptions_list" href="#full_list">Exceptions</a></li>
+    
+
+    
+      <li role="presentation" class="disabled">Protocols</li>
+    
+  </ul>
+
+  <div class="sidebar-search">
+    <i class="fa fa-search"></i>
+    <input type="text" class="sidebar-searchInput" placeholder="search" autocomplete="off" results="0" />
+  </div>
+
+  <ul id="full_list" class="sidebar-fullList"></ul>
+  <div class="sidebar-noResults"></div>
+
+  <script src="dist/sidebar_items.js" defer></script>
+</section>
+
+<section class="content">
+  <div class="content-inner">
+    <button class="sidebar-toggle">
+      <i class="fa fa-bars"></i>
+    </button>
+
+
+      <h1>
+        Mix.Tasks.Docs
+        
+        
+          <a href="https://github.com/elixir-lang/ex_doc/blob/master/lib/mix/tasks/docs.ex#L1" title="View Source" class="view-source" rel="help">
+            <i class="fa fa-code"></i>
+          </a>
+        
+      </h1>
+
+      <ul class="summary-links">
+        
+        
+        
+        
+        
+      </ul>
+
+      
+        <section id="moduledoc" class="docstring">
+          <p>Uses ExDoc to generate a static web page from the docstrings extracted from
+all of the project’s modules.</p>
+<h2>Command line options</h2>
+<ul>
+<li><code class="inline">--output</code>, <code class="inline">-o</code> - output directory for the generated docs; default: <code class="inline">&quot;doc&quot;</code>
+</li>
+</ul>
+<h2>Configuration</h2>
+<p>The task uses the project’s <code class="inline">:name</code> key if defined, otherwise it will use the
+<code class="inline">:app</code> key as a substitute.</p>
+<p>It also uses the <code class="inline">:version</code> key and <code class="inline">:source_url</code> from the project’s configuration.</p>
+<p>The following options should be put under the <code class="inline">:docs</code> key in your project’s
+main configuration. The docs options should be a keyword list or a function
+returning a keyword list that will be lazily executed.</p>
+<ul>
+<li><p><code class="inline">:output</code> - output directory for the generated docs; default: “doc”.
+  May be overriden by command line argument.</p>
+</li>
+<li><p><code class="inline">:readme</code> - string denoting the source file for a project README
+  (e.g., “README.md”); default: <code class="inline">nil</code> (no README created).</p>
+</li>
+<li><p><code class="inline">:formatter</code> - doc formatter to use; default: “html”.</p>
+</li>
+<li><p><code class="inline">:source_root</code> - path to the source code root directory;
+  default: “.” <em>(current directory)</em>.</p>
+</li>
+<li><p><code class="inline">:source_beam</code> - path to the beam directory; default: mix’s compile path.</p>
+</li>
+<li><p><code class="inline">:source_url_pattern</code> - public URL of the project.
+  Derived from project’s <code class="inline">:source_url</code> if not present.</p>
+</li>
+<li><p><code class="inline">:source_ref</code> - the branch/commit/tag used for source link inference.
+  Ignored if <code class="inline">:source_url_pattern</code> is provided; default: master.</p>
+</li>
+<li><code class="inline">:main</code> - main page of the documentation. It may be a module or a generated page,
+  like “overview” or “readme”; default: “overview” when —formatter is “html”.
+</li>
+</ul>
+
+        </section>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <footer>
+      <p>
+        This site was built using <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" rel="help">ExDoc</a> (v0.8.4)
+        and <a href="http://elixir-lang.org/" title="Elixir" rel="help">Elixir</a>.
+      </p>
+    </footer>
+  </div>
+</section>
+</div>
+    <script src="dist/app.js"></script>
+  </body>
+</html>
+

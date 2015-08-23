@@ -1,0 +1,433 @@
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+        <title>ExDoc.Formatter.HTML.Templates – ex_doc v0.8.4</title>
+      
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.8.4">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,300,700,900|Merriweather:300italic,300,700,700italic|Inconsolata:400,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="dist/app.css" />
+  </head>
+  <body>
+
+    
+    <div class="main">
+<section class="sidebar">
+  
+    <h1 class="sidebar-projectName">
+      <a href="https://github.com/elixir-lang/ex_doc/">ex_doc</a>
+    </h1>
+  
+  <h2 class="sidebar-projectVersion">v0.8.4</h2>
+
+  <ul class="sidebar-mainNav">
+    
+
+    <li><a href="overview.html">Overview</a></li>
+
+    
+      <li><a id="modules_list" href="#full_list">Modules</a></li>
+    
+
+    
+      <li><a id="exceptions_list" href="#full_list">Exceptions</a></li>
+    
+
+    
+      <li role="presentation" class="disabled">Protocols</li>
+    
+  </ul>
+
+  <div class="sidebar-search">
+    <i class="fa fa-search"></i>
+    <input type="text" class="sidebar-searchInput" placeholder="search" autocomplete="off" results="0" />
+  </div>
+
+  <ul id="full_list" class="sidebar-fullList"></ul>
+  <div class="sidebar-noResults"></div>
+
+  <script src="dist/sidebar_items.js" defer></script>
+</section>
+
+<section class="content">
+  <div class="content-inner">
+    <button class="sidebar-toggle">
+      <i class="fa fa-bars"></i>
+    </button>
+
+
+      <h1>
+        ExDoc.Formatter.HTML.Templates
+        
+        
+          <a href="https://github.com/elixir-lang/ex_doc/blob/master/lib/ex_doc/formatter/html/templates.ex#L1" title="View Source" class="view-source" rel="help">
+            <i class="fa fa-code"></i>
+          </a>
+        
+      </h1>
+
+      <ul class="summary-links">
+        
+          <li><a href="#summary_details">Summary</a></li>
+        
+        
+        
+          <li><a href="#functions_details">Functions</a></li>
+        
+        
+        
+      </ul>
+
+      
+        <section id="moduledoc" class="docstring">
+          <p>Handle all template interfaces for the HTML formatter.</p>
+
+        </section>
+      
+
+      
+        <section id="summary_details" class="details-list">
+          <h1 id="summary" class="section-heading">Summary</h1>
+          <div class="summary">
+            <div class="summary-row">
+  <div class="summary-signature"><a href="#create_sidebar_items/1">create_sidebar_items(input)</a></div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature"><a href="#detail_template/2">detail_template(node, module)</a></div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature"><a href="#footer_template/0">footer_template()</a></div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature"><a href="#head_template/2">head_template(config, page)</a></div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature"><a href="#module_page/4">module_page(node, config, all, has_readme)</a></div>
+  
+    <div class="summary-synopsis"><p>Generate content from the module template for a given <code class="inline">node</code></p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature"><a href="#module_template/8">module_template(config, module, types, functions, macros, callbacks, all, has_readme)</a></div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature"><a href="#not_found_template/5">not_found_template(config, modules, exceptions, protocols, has_readme)</a></div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature"><a href="#overview_entry_template/1">overview_entry_template(node)</a></div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature"><a href="#overview_template/5">overview_template(config, modules, exceptions, protocols, has_readme)</a></div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature"><a href="#readme_template/5">readme_template(config, modules, exceptions, protocols, content)</a></div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature"><a href="#redirect_template/2">redirect_template(config, redirect_to)</a></div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature"><a href="#sidebar_template/5">sidebar_template(config, modules, exceptions, protocols, has_readme)</a></div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature"><a href="#summary_template/1">summary_template(node)</a></div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature"><a href="#type_detail_template/2">type_detail_template(node, module)</a></div>
+  
+</div>
+
+          </div>
+        </section>
+      
+
+      
+
+      
+        <section id="functions_details" class="details-list">
+          <h1 class="section-heading">Functions</h1>
+          <div class="detail">
+  <div class="detail-header" id="create_sidebar_items/1">
+    <a href="#create_sidebar_items/1" class="detail-link" title="Link to this function">
+      <i class="fa fa-link"></i>
+    </a>
+    <span class="signature">create_sidebar_items(input)</span>
+      
+      <a href="https://github.com/elixir-lang/ex_doc/blob/master/lib/ex_doc/formatter/html/templates.ex#L98" class="view-source" rel="help" title="View Source">
+       <i class="fa fa-code"></i>
+     </a>
+    
+  </div>
+  
+    <div class="specs">
+      <h4 class="specs-title">Specs</h4>
+      <ul class="specs-list">
+        
+          <li>
+            <code>create_sidebar_items(list) :: <a href="http://elixir-lang.org/docs/stable/elixir/String.html#t:t/0">String.t</a></code>
+          </li>
+        
+      </ul>
+    </div>
+  
+  <section class="docstring">
+    
+  </section>
+</div>
+<div class="detail">
+  <div class="detail-header" id="detail_template/2">
+    <a href="#detail_template/2" class="detail-link" title="Link to this function">
+      <i class="fa fa-link"></i>
+    </a>
+    <span class="signature">detail_template(node, module)</span>
+      
+      <a href="https://github.com/elixir-lang/ex_doc/blob/master/lib/ex_doc/formatter/html/templates.ex#L121" class="view-source" rel="help" title="View Source">
+       <i class="fa fa-code"></i>
+     </a>
+    
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+</div>
+<div class="detail">
+  <div class="detail-header" id="footer_template/0">
+    <a href="#footer_template/0" class="detail-link" title="Link to this function">
+      <i class="fa fa-link"></i>
+    </a>
+    <span class="signature">footer_template()</span>
+      
+      <a href="https://github.com/elixir-lang/ex_doc/blob/master/lib/ex_doc/formatter/html/templates.ex#L121" class="view-source" rel="help" title="View Source">
+       <i class="fa fa-code"></i>
+     </a>
+    
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+</div>
+<div class="detail">
+  <div class="detail-header" id="head_template/2">
+    <a href="#head_template/2" class="detail-link" title="Link to this function">
+      <i class="fa fa-link"></i>
+    </a>
+    <span class="signature">head_template(config, page)</span>
+      
+      <a href="https://github.com/elixir-lang/ex_doc/blob/master/lib/ex_doc/formatter/html/templates.ex#L121" class="view-source" rel="help" title="View Source">
+       <i class="fa fa-code"></i>
+     </a>
+    
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+</div>
+<div class="detail">
+  <div class="detail-header" id="module_page/4">
+    <a href="#module_page/4" class="detail-link" title="Link to this function">
+      <i class="fa fa-link"></i>
+    </a>
+    <span class="signature">module_page(node, config, all, has_readme)</span>
+      
+      <a href="https://github.com/elixir-lang/ex_doc/blob/master/lib/ex_doc/formatter/html/templates.ex#L11" class="view-source" rel="help" title="View Source">
+       <i class="fa fa-code"></i>
+     </a>
+    
+  </div>
+  
+  <section class="docstring">
+    <p>Generate content from the module template for a given <code class="inline">node</code></p>
+
+  </section>
+</div>
+<div class="detail">
+  <div class="detail-header" id="module_template/8">
+    <a href="#module_template/8" class="detail-link" title="Link to this function">
+      <i class="fa fa-link"></i>
+    </a>
+    <span class="signature">module_template(config, module, types, functions, macros, callbacks, all, has_readme)</span>
+      
+      <a href="https://github.com/elixir-lang/ex_doc/blob/master/lib/ex_doc/formatter/html/templates.ex#L121" class="view-source" rel="help" title="View Source">
+       <i class="fa fa-code"></i>
+     </a>
+    
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+</div>
+<div class="detail">
+  <div class="detail-header" id="not_found_template/5">
+    <a href="#not_found_template/5" class="detail-link" title="Link to this function">
+      <i class="fa fa-link"></i>
+    </a>
+    <span class="signature">not_found_template(config, modules, exceptions, protocols, has_readme)</span>
+      
+      <a href="https://github.com/elixir-lang/ex_doc/blob/master/lib/ex_doc/formatter/html/templates.ex#L121" class="view-source" rel="help" title="View Source">
+       <i class="fa fa-code"></i>
+     </a>
+    
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+</div>
+<div class="detail">
+  <div class="detail-header" id="overview_entry_template/1">
+    <a href="#overview_entry_template/1" class="detail-link" title="Link to this function">
+      <i class="fa fa-link"></i>
+    </a>
+    <span class="signature">overview_entry_template(node)</span>
+      
+      <a href="https://github.com/elixir-lang/ex_doc/blob/master/lib/ex_doc/formatter/html/templates.ex#L121" class="view-source" rel="help" title="View Source">
+       <i class="fa fa-code"></i>
+     </a>
+    
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+</div>
+<div class="detail">
+  <div class="detail-header" id="overview_template/5">
+    <a href="#overview_template/5" class="detail-link" title="Link to this function">
+      <i class="fa fa-link"></i>
+    </a>
+    <span class="signature">overview_template(config, modules, exceptions, protocols, has_readme)</span>
+      
+      <a href="https://github.com/elixir-lang/ex_doc/blob/master/lib/ex_doc/formatter/html/templates.ex#L121" class="view-source" rel="help" title="View Source">
+       <i class="fa fa-code"></i>
+     </a>
+    
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+</div>
+<div class="detail">
+  <div class="detail-header" id="readme_template/5">
+    <a href="#readme_template/5" class="detail-link" title="Link to this function">
+      <i class="fa fa-link"></i>
+    </a>
+    <span class="signature">readme_template(config, modules, exceptions, protocols, content)</span>
+      
+      <a href="https://github.com/elixir-lang/ex_doc/blob/master/lib/ex_doc/formatter/html/templates.ex#L121" class="view-source" rel="help" title="View Source">
+       <i class="fa fa-code"></i>
+     </a>
+    
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+</div>
+<div class="detail">
+  <div class="detail-header" id="redirect_template/2">
+    <a href="#redirect_template/2" class="detail-link" title="Link to this function">
+      <i class="fa fa-link"></i>
+    </a>
+    <span class="signature">redirect_template(config, redirect_to)</span>
+      
+      <a href="https://github.com/elixir-lang/ex_doc/blob/master/lib/ex_doc/formatter/html/templates.ex#L121" class="view-source" rel="help" title="View Source">
+       <i class="fa fa-code"></i>
+     </a>
+    
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+</div>
+<div class="detail">
+  <div class="detail-header" id="sidebar_template/5">
+    <a href="#sidebar_template/5" class="detail-link" title="Link to this function">
+      <i class="fa fa-link"></i>
+    </a>
+    <span class="signature">sidebar_template(config, modules, exceptions, protocols, has_readme)</span>
+      
+      <a href="https://github.com/elixir-lang/ex_doc/blob/master/lib/ex_doc/formatter/html/templates.ex#L121" class="view-source" rel="help" title="View Source">
+       <i class="fa fa-code"></i>
+     </a>
+    
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+</div>
+<div class="detail">
+  <div class="detail-header" id="summary_template/1">
+    <a href="#summary_template/1" class="detail-link" title="Link to this function">
+      <i class="fa fa-link"></i>
+    </a>
+    <span class="signature">summary_template(node)</span>
+      
+      <a href="https://github.com/elixir-lang/ex_doc/blob/master/lib/ex_doc/formatter/html/templates.ex#L121" class="view-source" rel="help" title="View Source">
+       <i class="fa fa-code"></i>
+     </a>
+    
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+</div>
+<div class="detail">
+  <div class="detail-header" id="type_detail_template/2">
+    <a href="#type_detail_template/2" class="detail-link" title="Link to this function">
+      <i class="fa fa-link"></i>
+    </a>
+    <span class="signature">type_detail_template(node, module)</span>
+      
+      <a href="https://github.com/elixir-lang/ex_doc/blob/master/lib/ex_doc/formatter/html/templates.ex#L121" class="view-source" rel="help" title="View Source">
+       <i class="fa fa-code"></i>
+     </a>
+    
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+</div>
+
+        </section>
+      
+
+      
+
+      
+        <footer>
+      <p>
+        This site was built using <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" rel="help">ExDoc</a> (v0.8.4)
+        and <a href="http://elixir-lang.org/" title="Elixir" rel="help">Elixir</a>.
+      </p>
+    </footer>
+  </div>
+</section>
+</div>
+    <script src="dist/app.js"></script>
+  </body>
+</html>
+
